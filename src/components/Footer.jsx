@@ -16,17 +16,17 @@ function Footer() {
             <h3 className="text-lg font-bold">Customer Support</h3>
             <ul className="mt-2 space-y-2 text-gray-500">
               <li>
-                <a href="/contact" className="hover:text-orange-400">
+                <a href="#" className="hover:text-orange-400">
                   Contact Us
                 </a>
               </li>
               <li>
-                <a href="/faq" className="hover:text-orange-400">
+                <a href="#" className="hover:text-orange-400">
                   FAQs
                 </a>
               </li>
               <li>
-                <a href="/returns" className="hover:text-orange-400">
+                <a href="#" className="hover:text-orange-400">
                   Returns & Refunds
                 </a>
               </li>
