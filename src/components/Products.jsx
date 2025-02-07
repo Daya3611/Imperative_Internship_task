@@ -31,12 +31,12 @@ function Products() {
     fetch("/data/ProductData.json")
       .then((response) => {
         if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
+          toast.error(`HTTP error! Status: ${response.status}`);
         }
         return response.json();
       })
       .then((data) => setProducts(data))
-      .catch((error) => console.error("Error loading products:", error));
+      .catch((error) => toast.error("Error loading products:", error));
   }, []);
 
   let filteredProducts = products.filter((product) => {
