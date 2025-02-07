@@ -1,20 +1,45 @@
-# Internship Task
+# Imperative Internship Task
 
-This project is part of an internship task to set up a minimal React application using Vite, complete with Hot Module Replacement (HMR) and ESLint configuration.
+## 🚀 Overview
+This project is part of an internship task that involves building a **product listing page** with filtering, sorting, and pagination functionalities. The application is developed using **React.js** and fetches product data from a local JSON file.
 
-Currently, two official plugins are available for this setup:
+## 🛠️ Tech Stack
+- **React.js** - Frontend framework
+- **Tailwind CSS** - Styling
+- **React Icons** - Icons
+- **React Toastify** - Notifications
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh.
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh.
 
-This setup ensures a fast and efficient development environment, ideal for modern web development practices.
-Internship Task
 
-This project is part of an internship task to set up a minimal React application using Vite, complete with Hot Module Replacement (HMR) and ESLint configuration.
+## ⚙️ Features
+✅ Display products from `ProductData.json`
+✅ Filter products by **category**
+✅ Filter products by **price range**
+✅ Sort products by **price (ascending/descending)**
+✅ Pagination support (responsive)
+✅ Toast notifications
 
-Currently, two official plugins are available for this setup:
+## 📦 Installation & Setup
+1. **Clone the repository**
+   ```sh
+   git clone https://github.com/Daya3611/Imperative_Internship_task.git
+   ```
+2. **Navigate into the project directory**
+   ```sh
+   cd Imperative_Internship_task
+   ```
+3. **Install dependencies**
+   ```sh
+   npm install
+   ```
+4. **Start the development server**
+   ```sh
+   npm start
+   ```
+5. Open **http://localhost:3000** in your browser.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh.
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh.
 
-This setup ensures a fast and efficient development environment, ideal for modern web development practices.
+
+---
+Made with ❤️ by [Dayanand Gawade](https://github.com/Daya3611)
+
