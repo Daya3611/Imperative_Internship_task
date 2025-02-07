@@ -1,8 +1,8 @@
 import React from "react";
-import Products, { ProductData } from "./Products";
-// Adjust the path as necessary
+import Products from "./Products";
 
 function Filter({
+  productData,
   category,
   setCategory,
   priceRange,
@@ -12,7 +12,7 @@ function Filter({
 }) {
   const categoryList = [
     "All",
-    ...new Set(ProductData.map((item) => item.category)),
+    ...new Set(productData.map((item) => item.category)),
   ];
   const priceRanges = [
     {

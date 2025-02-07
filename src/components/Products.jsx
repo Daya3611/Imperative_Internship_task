@@ -1,107 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaAngleDoubleRight, FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import { IoIosStar } from "react-icons/io";
 import { toast } from "react-toastify";
 import Filter from "./Filter";
-
-export const ProductData = [
-  {
-    id: 1,
-    name: "Phone",
-    price: 699,
-    category: "Electronics",
-    rating: 4,
-    image: "images/phone.png",
-  },
-  {
-    id: 2,
-    name: "Laptop",
-    price: 1200,
-    category: "Electronics",
-    rating: 5,
-    image: "images/laptop.jpeg",
-  },
-  {
-    id: 3,
-    name: "Headphones",
-    price: 150,
-    category: "Electronics",
-    rating: 4,
-    image: "images/headphone.png",
-  },
-  {
-    id: 4,
-    name: "Smartwatch",
-    price: 250,
-    category: "Electronics",
-    rating: 4,
-    image: "images/smartwatch.png",
-  },
-  {
-    id: 5,
-    name: "T-Shirt",
-    price: 25,
-    category: "Clothing",
-    rating: 5,
-    image: "images/tshirt.png",
-  },
-  {
-    id: 6,
-    name: "Jeans",
-    price: 45,
-    category: "Clothing",
-    rating: 4,
-    image: "images/jeans.png",
-  },
-  {
-    id: 7,
-    name: "Jacket",
-    price: 80,
-    category: "Clothing",
-    rating: 4,
-    image: "images/jacket.png",
-  },
-  {
-    id: 8,
-    name: "Sneakers",
-    price: 60,
-    category: "Clothing",
-    rating: 5,
-    image: "images/shoos.png",
-  },
-  {
-    id: 9,
-    name: "Book",
-    price: 15,
-    category: "Books",
-    rating: 3,
-    image: "images/book.png",
-  },
-  {
-    id: 10,
-    name: "Notebook",
-    price: 10,
-    category: "Books",
-    rating: 4,
-    image: "images/notebook.png",
-  },
-  {
-    id: 11,
-    name: "Magazine",
-    price: 5,
-    category: "Books",
-    rating: 3,
-    image: "images/magzzen.png",
-  },
-  {
-    id: 12,
-    name: "E-Reader",
-    price: 130,
-    category: "Books",
-    rating: 4,
-    image: "images/ereader.png",
-  },
-];
 
 function Products() {
   const Star = (rating) => {
@@ -119,14 +20,26 @@ function Products() {
     return stars;
   };
 
+  const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(0);
   const productsPerPage = window.innerWidth < 750 ? 1 : 5;
-
   const [category, setCategory] = useState("All");
   const [priceRange, setPriceRange] = useState([0, 50000]);
   const [sortOrder, setSortOrder] = useState("");
 
-  let filteredProducts = ProductData.filter((product) => {
+  useEffect(() => {
+    fetch("/data/ProductData.json")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.json();
+      })
+      .then((data) => setProducts(data))
+      .catch((error) => console.error("Error loading products:", error));
+  }, []);
+
+  let filteredProducts = products.filter((product) => {
     return (
       (category === "All" || product.category === category) &&
       product.price >= priceRange[0] &&
@@ -179,6 +92,7 @@ function Products() {
 
       <div className="flex items-center justify-center">
         <Filter
+          productData={products}
           category={category}
           setCategory={setCategory}
           priceRange={priceRange}
