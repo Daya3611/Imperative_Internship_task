@@ -56,7 +56,7 @@ function Footer() {
         </div>
 
         <div className="mt-8 text-center text-gray-500 text-sm border-t border-gray-300 pt-5">
-          © {new Date().getFullYear()} YourCompany. All rights reserved. |
+          © {new Date().getFullYear()} OnlineShop. All rights reserved. |
           Design & Develop by{" "}
           <a
             href="https://dayanandgawade.in"

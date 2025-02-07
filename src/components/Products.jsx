@@ -118,6 +118,7 @@ function Products() {
                   src={product.image}
                   alt={product.name}
                   className="w-full md:h-[180px] h-[250px] rounded-3xl object-fill md:object-cover transition-transform duration-300 hover:scale-110 hover:rotate-2"
+                  loading="lazy"
                 />
               </div>
 
