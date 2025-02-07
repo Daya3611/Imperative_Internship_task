@@ -60,7 +60,7 @@ function Footer() {
           Design & Develop by{" "}
           <a
             href="https://dayanandgawade.in"
-            className="hover:text-orange-600"
+            className="hover:text-orange-400 text-orange-600 hover:underline"
             target="_blank"
           >
             Dayanand Gawade.

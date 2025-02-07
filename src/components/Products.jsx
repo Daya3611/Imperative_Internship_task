@@ -172,7 +172,7 @@ function Products() {
           alt="underline-img"
           className="w-[200px]"
         />
-        <p className="text-neutral-700 text-sm">
+        <p className="text-neutral-700 text-sm px-4">
           Explore our range of premium products designed for your needs.
         </p>
       </div>
