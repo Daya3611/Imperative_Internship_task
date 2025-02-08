@@ -1,12 +1,12 @@
-import React from "react";
+import React, { useDebugValue } from "react";
 import { IoMenu } from "react-icons/io5";
 import { toast } from "react-toastify";
 
+
 function Header() {
   const menubtn = () => {
-    toast.info("This function has not been developed yet.")
-  }
-
+    toast.info("This function has not been developed yet.");
+  };
 
   return (
     <div className="flex justify-between items-center text-center p-4  md:shadow-sm md:shadow-neutral-300  w-full rounded-b-3xl">
@@ -38,7 +38,8 @@ function Header() {
         </div>
 
         <div className="md:hidden flex items-center justify-center space-x-0 sm:space-x-0 md:space-x-1.5 lg:space-x-4">
-          <IoMenu className="h-8 w-8" onClick={menubtn} />
+          <IoMenu className="h-8 w-8" onClick={menubtn}  />
+          {/* <MobileListMenu/> */}
         </div>
       </nav>
     </div>

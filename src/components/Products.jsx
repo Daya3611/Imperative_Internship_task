@@ -75,22 +75,23 @@ function Products() {
     toast.info("This function has not been developed yet.");
 
   return (
-    <section id="products">
-      <div className="flex flex-col items-center text-center">
-        <h1 className="text-3xl font-bold">
+    <section id="products" className="py-12 bg-white">
+      <div className="text-center mb-8">
+        <h1 className="text-4xl font-extrabold text-gray-800">
           Our <span className="text-orange-600">Products</span>
         </h1>
         <img
           src="/images/underline-black.svg"
           alt="underline-img"
-          className="w-[200px]"
+          className="w-[200px] mx-auto mt-2"
         />
-        <p className="text-neutral-700 text-sm px-4">
-          Explore our range of premium products designed for your needs.
+        <p className="text-neutral-600 text-lg mt-3 max-w-2xl mx-auto">
+          Discover our exclusive range of premium products tailored to your
+          needs.
         </p>
       </div>
 
-      <div className="flex items-center justify-center">
+      <div className="flex justify-center mb-6">
         <Filter
           productData={products}
           category={category}
@@ -103,31 +104,31 @@ function Products() {
       </div>
 
       {filteredProducts.length === 0 ? (
-        <div>
-          <p className="text-center text-gray-500 mt-5">No products found.</p>
-        </div>
+        <p className="text-center text-gray-500 text-lg mt-5">
+          No products found.
+        </p>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mt-5 transition-all duration-500 px-5 md:px-0">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 px-6">
           {displayProduct.map((product) => (
             <div
               key={product.id}
-              className="bg-white border border-gray-300 p-5 rounded-3xl shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+              className="bg-white border border-gray-200 py-4 px-4 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 "
             >
-              <div className="relative overflow-hidden rounded-3xl">
+              <div className="relative overflow-hidden rounded-2xl">
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full md:h-[200px] h-[250px] rounded-3xl object-fill transition-transform duration-300 hover:scale-110 hover:rotate-2"
+                  className="w-full md:h-[200px] h-[250px] rounded-2xl object-fill transition-transform duration-300 hover:scale-110 hover:rotate-3"
                   loading="lazy"
                 />
               </div>
 
-              <div className="flex flex-col gap-3 items-center mt-4">
-                <h2 className="text-xl font-bold text-gray-800">
+              <div className="text-center mt-4">
+                <h2 className="text-xl font-bold text-gray-900">
                   {product.name}
                 </h2>
 
-                <div className="flex items-center gap-2">
+                <div className="flex justify-center items-center gap-2 mt-2">
                   <p className="text-2xl text-green-600 font-extrabold">
                     ₹{product.price}.00
                   </p>
@@ -136,10 +137,12 @@ function Products() {
                   </p>
                 </div>
 
-                <div className="flex">{Star(product.rating)}</div>
+                <div className="flex justify-center mt-2">
+                  {Star(product.rating)}
+                </div>
 
                 <button
-                  className="mt-3 bg-orange-500 text-white py-2 px-5 rounded-full font-semibold shadow-md hover:bg-orange-600 hover:scale-105 transition-all duration-300"
+                  className="mt-4 bg-orange-500 text-white py-2 px-6 rounded-full font-semibold shadow-lg hover:bg-orange-600 hover:scale-105 transition-all duration-300"
                   onClick={detailsbtn}
                 >
                   View Details
@@ -151,20 +154,23 @@ function Products() {
       )}
 
       {totalPages > 1 && (
-        <div className="flex gap-5 items-center justify-center mt-5">
+        <div className="flex gap-5 items-center justify-center mt-8">
           <button
-            className="bg-neutral-200 hover:bg-orange-600 rounded-full h-[40px] w-[40px] flex items-center justify-center text-black hover:text-white hover:scale-105 transition-all duration-300"
+            className="bg-neutral-200 hover:bg-orange-600 rounded-full h-[45px] w-[45px] flex items-center justify-center text-black hover:text-white hover:scale-110 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             onClick={prev}
             disabled={currentPage === 0}
           >
-            <FaAngleLeft className="hover:scale-110 transition-all duration-300 h-7 w-7" />
+            <FaAngleLeft className="h-6 w-6" />
           </button>
+          <span className="text-lg font-semibold text-gray-700">
+            Page {currentPage + 1} of {totalPages}
+          </span>
           <button
-            className="bg-neutral-200 hover:bg-orange-600 rounded-full h-[40px] w-[40px] flex items-center justify-center text-black hover:text-white hover:scale-105 transition-all duration-300"
+            className="bg-neutral-200 hover:bg-orange-600 rounded-full h-[45px] w-[45px] flex items-center justify-center text-black hover:text-white hover:scale-110 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
             onClick={next}
             disabled={currentPage === totalPages - 1}
           >
-            <FaAngleRight className="hover:scale-110 transition-all duration-300 h-7 w-7" />
+            <FaAngleRight className="h-6 w-6" />
           </button>
         </div>
       )}
