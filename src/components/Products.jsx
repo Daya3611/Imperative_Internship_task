@@ -76,7 +76,7 @@ function Products() {
 
   return (
     <section id="products" className="py-12 bg-white">
-      <div className="text-center mb-8">
+      <div className="text-center mb-3">
         <h1 className="text-4xl font-extrabold text-gray-800">
           Our <span className="text-orange-600">Products</span>
         </h1>
@@ -85,7 +85,7 @@ function Products() {
           alt="underline-img"
           className="w-[200px] mx-auto mt-2"
         />
-        <p className="text-neutral-600 text-lg mt-3 max-w-2xl mx-auto">
+        <p className="text-neutral-600 text-md mt-3 max-w-2xl mx-auto">
           Discover our exclusive range of premium products tailored to your
           needs.
         </p>
@@ -108,7 +108,7 @@ function Products() {
           No products found.
         </p>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 px-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 px-6">
           {displayProduct.map((product) => (
             <div
               key={product.id}
@@ -163,7 +163,7 @@ function Products() {
             <FaAngleLeft className="h-6 w-6" />
           </button>
           <span className="text-lg font-semibold text-gray-700">
-            Page {currentPage + 1} of {totalPages}
+            {currentPage + 1} of {totalPages}
           </span>
           <button
             className="bg-neutral-200 hover:bg-orange-600 rounded-full h-[45px] w-[45px] flex items-center justify-center text-black hover:text-white hover:scale-110 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"

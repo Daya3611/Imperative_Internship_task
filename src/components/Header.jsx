@@ -9,7 +9,7 @@ function Header() {
   };
 
   return (
-    <div className="flex justify-between items-center text-center p-4  md:shadow-sm md:shadow-neutral-300  w-full rounded-b-3xl">
+    <div className="flex justify-between items-center text-center py-4 px-5 lg:px-[120px] bg-white  md:shadow-sm md:shadow-neutral-300  fixed w-full top-0 left-0 z-50 ">
       <h1>
         <img
           src="images/logo.png"
